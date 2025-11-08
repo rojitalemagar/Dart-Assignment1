@@ -1,5 +1,5 @@
 import 'bank_account.dart';
-import 'interest_bearing.dart'; // ✅ FIX 1: Import the InterestBearing interface
+import 'interest_bearing.dart'; 
 
 class Bank {
   final List<BankAccount> _accounts = [];
@@ -9,7 +9,7 @@ class Bank {
     print("Account ${account.accNumber} added successfully!");
   }
 
-  // ✅ FIX 2: Switched to a safer iteration-based findAccount method
+  // Switched to a safer iteration-based findAccount method
   BankAccount? findAccount(int accNumber) {
     for (var acc in _accounts) {
       if (acc.accNumber == accNumber) return acc;
@@ -48,7 +48,7 @@ class Bank {
   void applyMonthlyInterest() {
     for (var acc in _accounts) {
       if (acc is InterestBearing) {
-        // This part is correct now that InterestBearing is imported
+
         double interest = (acc as InterestBearing).calculateInterest(1);
         acc.deposit(interest);
         print("Applied \$${interest.toStringAsFixed(2)} interest to ${acc.accNumber}");
