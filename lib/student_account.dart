@@ -1,5 +1,5 @@
 import 'bank_account.dart';
-
+// StudentAccount class that extends BankAccount
 class StudentAccount extends BankAccount {
   final double maxBalance = 5000;
 

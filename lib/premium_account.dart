@@ -1,6 +1,7 @@
 import 'bank_account.dart';
 import 'interest_bearing.dart';
 
+// PremiumAccount class that extends BankAccount and implements InterestBearing
 class PremiumAccount extends BankAccount implements InterestBearing {
   final double minBalance = 10000;
   final double interestRate = 5; // percent per month

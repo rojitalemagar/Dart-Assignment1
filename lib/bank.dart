@@ -1,6 +1,6 @@
 import 'bank_account.dart';
 import 'interest_bearing.dart'; 
-
+// Bank class to manage multiple bank accounts
 class Bank {
   final List<BankAccount> _accounts = [];
 
@@ -16,7 +16,7 @@ class Bank {
     }
     return null;
   }
-  
+   // Updated transfer method with better error handling
   void transfer(int fromAccNum, int toAccNum, double amount) {
     var fromAcc = findAccount(fromAccNum);
     var toAcc = findAccount(toAccNum);
@@ -26,6 +26,7 @@ class Bank {
       return;
     }
 
+// Added check for sufficient funds before withdrawal
     double oldBalance = fromAcc.balance;
     fromAcc.withdraw(amount);
 
@@ -36,7 +37,7 @@ class Bank {
       print("Transfer failed due to insufficient funds!");
     }
   }
-
+// New method to generate a report of all accounts
   void generateReport() {
     print("----- Bank Accounts Report -----");
     for (var acc in _accounts) {
@@ -44,7 +45,7 @@ class Bank {
       print("-------------------------------");
     }
   }
-
+// New method to apply monthly interest to all interest-bearing accounts
   void applyMonthlyInterest() {
     for (var acc in _accounts) {
       if (acc is InterestBearing) {

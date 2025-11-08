@@ -1,5 +1,6 @@
 import 'bank_account.dart';
 
+// CheckingAccount class that extends BankAccount
 class CheckingAccount extends BankAccount {
   final double overDraftFee = 35;
 
