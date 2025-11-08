@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "OOP ASSIGNMENT_01",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart" // Replace with the actual entry point file
+        }
+    ]
+}
